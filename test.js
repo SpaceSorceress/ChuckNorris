@@ -1,4 +1,4 @@
-let string="Oh, shit, it's your";
+let string="banana mama";
 if(string.length>2 && string.length<121){
     let encoded=encodeURIComponent(string);
     console.log(encoded)

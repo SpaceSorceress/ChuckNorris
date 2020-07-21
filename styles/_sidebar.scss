@@ -10,7 +10,7 @@
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -20rem;
+  margin-left: -24rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
@@ -45,6 +45,6 @@
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -20rem;
+    margin-left: -24rem;
   }
 }

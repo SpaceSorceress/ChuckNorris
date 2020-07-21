@@ -9,5 +9,19 @@ form{
         width: 12rem;
     }
 
+     #textInput,
+   #inputHelpBlock{
+        width: 70vw;
+    }
     
+}
+
+@media (min-width: 767px) {
+    form{
+        #textInput,
+        #inputHelpBlock{
+        width: 50vw;
+    }
+    }
+   
 }

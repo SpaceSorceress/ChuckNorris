@@ -6,7 +6,17 @@ form #textArea {
 form #categoriesAvailable {
   width: 12rem;
 }
+form #textInput,
+form #inputHelpBlock {
+  width: 70vw;
+}
 
+@media (min-width: 767px) {
+  form #textInput,
+form #inputHelpBlock {
+    width: 50vw;
+  }
+}
 .card-body h5 {
   display: inline-block;
 }
@@ -33,9 +43,10 @@ form #categoriesAvailable {
 }
 #sidebar-wrapper .card {
   width: 20rem;
+  margin: 0 2rem;
 }
 #sidebar-wrapper #menu-close {
-  margin-left: 3rem;
+  margin-left: 7rem;
   margin-bottom: 9px;
 }
 #sidebar-wrapper i.fa-heart {
@@ -46,6 +57,11 @@ form #categoriesAvailable {
   right: 2rem;
 }
 
+@media (min-width: 768px) {
+  #results .card {
+    width: 65vw;
+  }
+}
 /*!
  * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
  * Copyright 2013-2020 Start Bootstrap
@@ -57,7 +73,7 @@ form #categoriesAvailable {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -20rem;
+  margin-left: -24rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -92,7 +108,7 @@ form #categoriesAvailable {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -20rem;
+    margin-left: -24rem;
   }
 }
 .main {
