@@ -1,0 +1,45 @@
+.card-body{
+        h5{
+            display: inline-block;
+        }
+        button{
+            border:none;
+            background-color: white;
+        }
+        i{
+            color:red;
+            display: inline;
+            position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+        }
+    }
+
+#results{
+    .card{
+        width: 90vw;
+    }
+}
+
+#sidebar-wrapper{
+    h3{
+    margin-top: 1rem;
+    padding-left: 1rem;
+    display: inline-block;
+    }
+    .card{
+        width: 20rem;
+    }
+    #menu-close{
+        margin-left: 3rem;
+        margin-bottom: 9px;
+   
+    }
+    i.fa-heart{
+            color:red;
+            display: inline;
+            position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+        }
+}

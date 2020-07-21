@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/output.css" rel="stylesheet">
+    <!--favicon-->
+    <title>Chuck Norris Jokes</title>
+    <script src="https://kit.fontawesome.com/9aeff7a208.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+    
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+    
+            <h3>Favourite jokes</h3>
+            <button class="btn btn-primary" id="menu-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Random</h5>
+                    <button><i class="fas fa-heart"></i></button>
+                    <h6 class="card-subtitle mb-2 text-muted">id: "oD2xlDq7TZ26TiKLGmgEHw"</h6>
+                    <p class="card-text">"Chuck Norris could literally mop the floor with your face. He
+                        could
+                        also vaccum his car out with your digestive tract.
+                        And disinfect his toilet with your soul."</p>
+                    <a href="https://api.chucknorris.io/jokes/oD2xlDq7TZ26TiKLGmgEHw" class="card-link" target="_blank">Link
+                        to joke</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+    
+    
+    
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10">
+                        <h1>Chuck Norris Jokes</h1>
+                    </div>
+    
+                </div>
+                <section id="search" class="my-4">
+                    <h2>Get a joke:</h2>
+    
+                    <form>
+                        <div class="mt-3 ml-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="searchOptions" id="randomSearch"
+                                    value="random" checked>
+                                <label class="form-check-label" for="randomSearch">
+                                    Random
+                                </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="searchOptions" id="categoriesSearch"
+                                    value="categories">
+                                <label class="form-check-label" for="categoriesSearch">
+                                    By category
+                                </label>
+                            </div>
+    
+                            <div class="form-group mt-3 " id="categories">
+    
+                                <select class="form-control form-control-sm shadow-sm" id="categoriesAvailable" name="categories" required>
+                                    <option value="">Please chose an option</option>
+                                    <option value="animal">Animal</option>
+                                    <option value="career">Career</option>
+                                    <option value="celebrity">Celebrity</option>
+                                    <option value="dev">Dev</option>
+                                    <option value="explicit">Explicit</option>
+                                    <option value="fashion">Fashion</option>
+                                    <option value="food">Food</option>
+                                    <option value="history">History</option>
+                                    <option value="money">Money</option>
+                                    <option value="movie">Movie</option>
+                                    <option value="music">Music</option>
+                                    <option value="political">Political</option>
+                                    <option value="religion">Religion</option>
+                                    <option value="science">Science</option>
+                                    <option value="sport">Sport</option>
+                                    <option value="travel">Travel</option>
+                                </select>
+    
+                            </div>
+    
+    
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="searchOptions" id="textSearch"
+                                    value="text">
+                                <label class="form-check-label" for="textSearch">
+                                    Text search
+                                </label>
+                            </div>
+    
+    
+                            <div id="textArea" class="mt-3 ">
+                                <input type="text" id="textInput" class="form-control form-control-sm shadow-sm"
+                                    aria-describedby="inputHelpBlock" placeholder="Enter your search term or text" minlength="3" maxlength="120">
+                                <small id="inputHelpBlock" class="form-text text-muted">
+                                    Your search input must be 3-120 characters long, can contain letters and
+                                    numbers,
+                                    and must not contain spaces, special
+                                    characters, or emoji.
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary my-4 ml-5" id="searchButton">Get it!</button>
+                        <button class="btn btn-primary" id="menu-toggle">Saved</button>
+                        
+                    </form>
+                </section>
+    
+    
+    
+                <section id="results">
+                    <h2 class="my-3" id="jokeResults">Search results</h2>
+                    <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Ouch!</strong> You should try entering something else in order to find a joke. Try separate words in English first ;)
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Random</h5>
+                            <button><i class="far fa-heart"></i></button>
+                            <h6 class="card-subtitle mb-2 text-muted">id: "oD2xlDq7TZ26TiKLGmgEHw"</h6>
+                            <p class="card-text">"Chuck Norris could literally mop the floor with your face. He
+                                could
+                                also vaccum his car out with your digestive tract.
+                                And disinfect his toilet with your soul."</p>
+                            <a href="https://api.chucknorris.io/jokes/oD2xlDq7TZ26TiKLGmgEHw" class="card-link"
+                                target="_blank">Link to
+                                joke</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    
+    </div>
+    <!-- /#wrapper -->
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="scripts/searcher.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+            $("#menu-close").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+@use 'forms';
+@use 'cards';
+@use 'sidebar';
+
+
+.main{
+ border-right: 1px solid rgba(0,0,0,.125);
+}
+#favourites{
+    min-height: 100vh;
+}
+#alert{
+    display: none;
+}
