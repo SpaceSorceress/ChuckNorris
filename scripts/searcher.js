@@ -1,3 +1,43 @@
+
+//////storage
+function initiateStorage() {
+  if (!localStorage.favourites) {
+    let favourites = [];
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+  }
+  renderFavs();
+}
+
+initiateStorage();
+
+function addToStorage(joke) {
+  let favourites = JSON.parse(localStorage.getItem("favourites"));
+  if (favourites.indexOf(joke) === -1) {
+    favourites.push(joke);
+  }
+  localStorage.setItem("favourites", JSON.stringify(favourites));
+  renderFavs();
+}
+
+function removeFromStorage(joke) {
+  let favourites = JSON.parse(localStorage.getItem("favourites"));
+  favourites = favourites.filter((element) => {
+    return element.id !== joke.id;
+  });
+  localStorage.setItem("favourites", JSON.stringify(favourites));
+  renderFavs();
+}
+
+function renderFavs() {
+  let favourites = JSON.parse(localStorage.getItem("favourites"));
+  favourites.forEach((joke) => {
+    appendToFavs(renderOneJoke(joke));
+  });
+}
+
+
+///////searcher
+
 const randomSeach = document.getElementById("randomSearch");
 const categories = document.getElementById("categoriesSearch");
 const categoriesVariants = document.querySelector("#categoriesAvailable");
@@ -7,11 +47,12 @@ function renderJokes(joke){
     if(joke instanceof Array){
         console.log("array of jokes");
         joke.forEach(joke=>{
-          renderOneJoke(joke);
+          appendToResults(renderOneJoke(joke));
+          //appendToResults(outerDiv);
         })
     }else{
         console.log(joke);
-        renderOneJoke(joke);
+        appendToResults(renderOneJoke(joke));
     }
 }
 
@@ -30,16 +71,16 @@ icon.className = "far fa-heart";
 button.appendChild(icon);
 button.addEventListener("click", saveToFavs);
 inneerDiv.appendChild(button);
-const id= document.createElement("h6");
-id.className = "card-subtitle mb-2 text-muted";
-id.innerText = `id: ${joke.id}`;
-inneerDiv.appendChild(id);
 const paragraph= document.createElement("p");
 paragraph.className="card-text";
 paragraph.innerText=joke.text;
 paragraph.style.fontWeight=400;
 paragraph.style.lineHeight=1.5;
 inneerDiv.appendChild(paragraph);
+const id = document.createElement("h6");
+id.className = "card-subtitle mb-2 text-muted";
+id.innerText = `id: ${joke.id}`;
+inneerDiv.appendChild(id);
 const a=document.createElement("a");
 const link = document.createTextNode("Link to joke");
 //link.style.fontWeight=400;
@@ -53,17 +94,27 @@ inneerDiv.appendChild(a);
 outerDiv.appendChild(inneerDiv);
 outerDiv.style.fontSize="1rem";
 
-appendToResults(outerDiv);
+return outerDiv;
+//appendToResults(outerDiv);
 }
 
 function saveToFavs(event){
   event.preventDefault();
   let icon = event.target;
+  let card=icon.closest(".card");
+  console.log(card);
+  let favObject={};
+  favObject.id = card.querySelector("h6").innerText.slice(4);
+  favObject.type = card.querySelector("h5").innerText;
+  favObject.text = card.querySelector("p").innerText;
+  favObject.url = card.querySelector("a").href;
+  console.log(favObject);
   if (icon.className === "far fa-heart"){
     icon.className = "fas fa-heart";
-
+    addToStorage(favObject);
   } else{
     icon.className = "far fa-heart";
+    removeFromStorage(favObject);
   }
   
 }
@@ -142,8 +193,14 @@ async function fetching(path1, path2, text){
   }
 }
 
+
 function appendToResults(element){
   const listHeader = document.querySelector("#jokeResults");
+  listHeader.insertAdjacentElement("afterend", element);
+}
+
+function appendToFavs(element){
+  const listHeader = document.querySelector("#menu-close");
   listHeader.insertAdjacentElement("afterend", element);
 }
 

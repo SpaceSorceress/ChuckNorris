@@ -31,6 +31,9 @@ form #inputHelpBlock {
   top: 1.5rem;
   right: 2rem;
 }
+.card-body h6 {
+  opacity: 0.3;
+}
 
 #results .card {
   width: 90vw;
@@ -55,6 +58,9 @@ form #inputHelpBlock {
   position: absolute;
   top: 1.5rem;
   right: 2rem;
+}
+#sidebar-wrapper h6 {
+  opacity: 0.3;
 }
 
 @media (min-width: 768px) {
@@ -119,8 +125,14 @@ form #inputHelpBlock {
   min-height: 100vh;
 }
 
-#alert {
-  display: none;
+.alert {
+  max-width: 90vw;
+}
+
+@media (min-width: 768px) {
+  .alert {
+    max-width: 65vw;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */

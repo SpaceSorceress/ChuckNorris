@@ -9,6 +9,12 @@
 #favourites{
     min-height: 100vh;
 }
-#alert{
-    display: none;
+
+.alert{
+    max-width: 90vw;
+}
+@media (min-width: 768px) {
+  .alert{
+    max-width: 65vw;
+}
 }
