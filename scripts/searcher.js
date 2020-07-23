@@ -235,7 +235,7 @@ function appendToResults(element) {
 }
 
 function appendToFavs(element) {
-  const listHeader = document.querySelector("#menu-close");
+  const listHeader = document.querySelector("#chuckPortrait");
   listHeader.insertAdjacentElement("afterend", element);
 }
 
