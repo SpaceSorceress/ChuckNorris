@@ -35,10 +35,9 @@ form #inputHelpBlock {
   opacity: 0.3;
 }
 
-#results .card {
-  width: 90vw;
+#results {
+  padding-bottom: 5rem;
 }
-
 #sidebar-wrapper h3 {
   margin-top: 1rem;
   padding-left: 1rem;
@@ -59,15 +58,13 @@ form #inputHelpBlock {
   top: 1.5rem;
   right: 2rem;
 }
+#sidebar-wrapper .card-img-top {
+  margin-bottom: -2rem;
+}
 #sidebar-wrapper h6 {
   opacity: 0.3;
 }
 
-@media (min-width: 768px) {
-  #results .card {
-    width: 65vw;
-  }
-}
 /*!
  * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
  * Copyright 2013-2020 Start Bootstrap
@@ -117,6 +114,50 @@ form #inputHelpBlock {
     margin-left: -24rem;
   }
 }
+/* latin */
+@font-face {
+  font-family: "Monofett";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Monofett"), url(https://fonts.gstatic.com/s/monofett/v9/mFTyWbofw6zc9NtnW73Vsx0J0kJ6.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .links {
+  display: flex;
+  justify-content: center;
+}
+footer .links .fa-github {
+  margin: 0 2rem;
+}
+footer p {
+  font-size: 0.5rem;
+}
+
+.container-fluid {
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header img {
+  max-height: 10rem;
+}
+
 .main {
   border-right: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -127,12 +168,6 @@ form #inputHelpBlock {
 
 .alert {
   max-width: 90vw;
-}
-
-@media (min-width: 768px) {
-  .alert {
-    max-width: 65vw;
-  }
 }
 
 /*# sourceMappingURL=output.css.map */

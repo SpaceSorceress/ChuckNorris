@@ -1,0 +1,21 @@
+footer{
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        flex-direction: column;
+    .links{
+        display: flex;
+        justify-content: center;
+        .fa-github{
+            margin:0 2rem;
+        }
+    }
+    
+    p{
+        font-size: 0.5rem; 
+    }
+}

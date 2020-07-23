@@ -19,8 +19,9 @@
     }
 
 #results{
+    padding-bottom: 5rem;
     .card{
-        width: 90vw;
+        //width: 90vw;
     }
 }
 
@@ -46,6 +47,9 @@
     top: 1.5rem;
     right: 2rem;
         }
+    .card-img-top{
+    margin-bottom: -2rem;
+    } 
     h6{
         opacity: 0.3;
     }
@@ -53,7 +57,7 @@
 @media (min-width: 768px) {
   #results{
     .card{
-        width: 65vw;
+       // width: 65vw;
     }
 }
 }

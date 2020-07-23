@@ -10,6 +10,7 @@ function initiateStorage() {
 initiateStorage();
 
 function addToStorage(joke) {
+  event.preventDefault();
   let favourites = JSON.parse(localStorage.getItem("favourites"));
   if (favourites.indexOf(joke) === -1) {
     favourites.push(joke);
@@ -82,6 +83,7 @@ function renderOneJoke(joke, bool) {
     button.addEventListener("click", deleteThisFav);
   }else{
     icon.className = "far fa-heart";
+    icon.id= joke.url.slice(7);
     button.appendChild(icon);
     button.addEventListener("click", saveToFavs);
   }
@@ -115,7 +117,7 @@ function renderOneJoke(joke, bool) {
 }
 
 function saveToFavs(event) {
-    event.preventDefault();
+  event.preventDefault();
   let icon = event.target;
   let card = icon.closest(".card");
   
@@ -147,6 +149,10 @@ function deleteThisFav(event){
   });
   localStorage.setItem("favourites", JSON.stringify(favourites));
   card.remove();
+
+  const heartIdFromResults=id.slice(7);
+  const heart=document.getElementById(heartIdFromResults);
+  heart.className = "far fa-heart";
  
 }
 
@@ -242,7 +248,7 @@ function showAlert() {
   strong.appendChild(ouch);
   div.appendChild(strong);
   const info = document.createTextNode(
-    `  You should try entering something else in order to find a joke. Try separate words in English first ;)`
+    `  Chuck Norris hasn't been there yet. You'd better try something else before he notices you, bro.`
   );
   div.appendChild(info);
   const button = document.createElement("button");

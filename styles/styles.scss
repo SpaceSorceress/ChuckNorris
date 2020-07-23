@@ -1,8 +1,22 @@
 @use 'forms';
 @use 'cards';
 @use 'sidebar';
+@use 'fonts';
+@use 'footer';
 
-
+.container-fluid{
+    position: relative;
+    min-height: 100vh;
+    
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img{
+        max-height: 10rem;
+    }
+}
 .main{
  border-right: 1px solid rgba(0,0,0,.125);
 }
@@ -14,7 +28,8 @@
     max-width: 90vw;
 }
 @media (min-width: 768px) {
-  .alert{
-    max-width: 65vw;
-}
+
+
+
+
 }
